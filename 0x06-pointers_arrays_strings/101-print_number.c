@@ -1,37 +1,24 @@
 #include "main.h"
 
 /**
- * print_number - print integers
- * @n: integer value.
- *
- * Return: nothing
+ * print_number - prints an integer;
+ * @n: integer to be printed;
  */
-/* C program to print a long int number
-using putchar() only*/
-#include <stdio.h>
-
-void print(long n)
+void print_number(int n)
 {
-	// If number is smaller than 0, put a - sign
-	// and change number to positive
-	if (n < 0) {
-		putchar('-');
-		n = -n;
+	unsigned int n1;
+
+	if (n < 0)
+	{
+		n1 = -n;
+		_putchar('-');
+	} else
+	{
+		n1 = n;
 	}
 
-	// Remove the last digit and recur
-	if (n/10)
-		print(n/10);
+	if (n1 / 10)
+		print_number(n1 / 10);
 
-	// Print the last digit
-	putchar(n%10 + '0');
+	_putchar((n1 % 10) + '0');
 }
-
-// Driver program to test above function
-int main()
-{
-	long int n = 12045;
-	print(n);
-	return 0;
-}
-
