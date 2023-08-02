@@ -3,6 +3,7 @@
 /**
  *_put_recursion - writethat printa string, also followed by a new line
  *@s: This is the input string
+ *Return:nothing to return 
  */
 
 void _puts_recursion(char *s)
