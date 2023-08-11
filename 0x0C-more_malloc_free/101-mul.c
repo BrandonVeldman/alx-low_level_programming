@@ -7,10 +7,10 @@ void get_prod(char *prod, char *mult, int digit, int zeroes);
 void add_nums(char *final_prod, char *next_prod, int next_len);
 
 /**
- * find_len - Finds a length of a string.
- * @str: The string that to be measured.
+ * find_len - Finds the length of a string.
+ * @str: The string to be measured.
  *
- * Return: The length successfully of the string.
+ * Return: The length of the string.
  */
 int find_len(char *str)
 {
@@ -28,7 +28,7 @@ int find_len(char *str)
  * @size: The size of the array to be initialized.
  *
  * Description: If there is insufficient space, the
- *              function exits with status of 98.
+ *              function exits with a status of 98.
  * Return: A pointer to the array.
  */
 char *create_xarray(int size)
@@ -54,7 +54,7 @@ char *create_xarray(int size)
  *                  leading zeroes until it hits a non-zero number.
  * @str: The string of numbers to be iterate through.
  *
- * Return: A pointer of string
+ * Return: A pointer to the next non-zero element.
  */
 char *iterate_zeroes(char *str)
 {
