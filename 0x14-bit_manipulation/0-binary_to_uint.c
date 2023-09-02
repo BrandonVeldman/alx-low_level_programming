@@ -1,24 +1,35 @@
 #include "lists.h"
 
 /**
- * print_listint - a function that prints all the elements of a listint_t list.
- * @h: struct
- * Return:The number of nodes
+ * binary_to_uint - This funtion convert binary to decimal
+ * @b: This is my string of entry
+ * Return: This return to a digital number
  */
 
-size_t print_listint(const listint_t *h)
+unsigned int binary_to_uint(const char *b)
 {
-	int count = 0;
+	unsigned int decimal = 0;
+	int multiplicador = 1, index = 0;
 
-	if (h == NULL)
+	if (b == NULL)
 		return (0);
-
-	while (h != NULL)
+	for (index = 0; b[index] != '\0'; index++)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
-		count++;
+		if (b[index] != '0' && b[index] != '1')
+			return (0);
 	}
+	for (index = index - 1; index >= 0; index--)
+	{
+		char currentCharacter;
 
-	return (count);
+		currentCharacter = b[index];
+		if (currentCharacter == '1')
+		{
+			decimal += multiplicador;
+		}
+		multiplicador = multiplicador * 2;
+		if (index == 0)
+			break;
+	}
+	return (decimal);
 }
